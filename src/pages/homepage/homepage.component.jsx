@@ -4,7 +4,7 @@ function HomePage()
 {
     return(
   <div className='homepage'>
-     <Directory/>
+     <Directory />
      </div>        
     );
 }
