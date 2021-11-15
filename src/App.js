@@ -3,6 +3,7 @@ import './App.css';
 import HomePage from './pages/homepage/homepage.component';
 import './pages/homepage/homepage.styles.scss';
 import ShopPage from './pages/shop/shop.component';
+import Header from './components/header/header.component';
 import {BrowserRouter, Route,Routes} from 'react-router-dom';
 
 // function Home(props)
@@ -33,6 +34,7 @@ function App() {
   return (
     <BrowserRouter>
     <div>
+      <Header/>
       <Routes>
       <Route path='/' element={<HomePage /> } />
       <Route path='/shop' element={<ShopPage/>} />
