@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import HomePage from './pages/homepage/homepage.component';
 import './pages/homepage/homepage.styles.scss';
+import ShopPage from './pages/shop/shop.component';
 import {BrowserRouter, Route,Routes} from 'react-router-dom';
 
 // function Home(props)
@@ -12,13 +13,13 @@ import {BrowserRouter, Route,Routes} from 'react-router-dom';
 //   );
 // }
 
-function Hats(props)
-{
-  console.log(props)
-  return(
-    <div><h1>Hats page</h1></div>
-  );
-}
+// function Hats(props)
+// {
+//   console.log(props)
+//   return(
+//     <div><h1>Hats page</h1></div>
+//   );
+// }
 
 function TopicDetails()
 {
@@ -34,7 +35,7 @@ function App() {
     <div>
       <Routes>
       <Route path='/' element={<HomePage /> } />
-      <Route path='/hats' element={<Hats/>} />
+      <Route path='/shop' element={<ShopPage/>} />
       <Route path='/topics/:topicId' element={<TopicDetails/>} />
       </Routes>
     </div>
