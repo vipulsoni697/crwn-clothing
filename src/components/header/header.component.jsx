@@ -4,7 +4,9 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {ReactComponent as Logo } from  '../../assets/crown.svg';
 import {auth} from '../../firebase/firebase.utils'
-function Header({currentUser})
+import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+function Header({currentUser, hidden})
 {
     return(
         <div className='header'>
@@ -20,14 +22,17 @@ function Header({currentUser})
                     :
                     <Link className='option' to='/signin'>SIGN IN</Link>
                 }
+                <CartIcon />
             </div>
+            { hidden ? null : <CartDropdown /> }
         </div>
     );
 }
 
-const mapStateToProps= (state)=>{
+const mapStateToProps= ({user: {currentUser } , cart : {hidden }})=>{
  return {
-     currentUser:state.user.currentUser,
+     currentUser,
+     hidden
 
  }   
 }
