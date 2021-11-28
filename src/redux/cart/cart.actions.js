@@ -1,4 +1,5 @@
 import CartActionTypes from "./cart.types";
+
 function toggleCartHidden()
 {
     return{
@@ -6,4 +7,12 @@ function toggleCartHidden()
     }
 }
 
-export default toggleCartHidden;
+function addItem(item)
+{
+    return{
+        type:CartActionTypes.ADD_ITEM,
+        payload:item
+    }
+}
+
+export {toggleCartHidden, addItem};
